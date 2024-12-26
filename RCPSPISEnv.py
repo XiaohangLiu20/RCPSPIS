@@ -59,7 +59,10 @@ class RCPSPISEnv(gym.Env):
             "available_resources": self.available_resources,
             "current_time": np.array([self.current_time], dtype=np.float32),
             "realized_benefits": self.realized_benefits,
-            "remaining_time": self.remaining_time
+            "remaining_time": self.remaining_time,
+            "duration": self.project_data['duration'].copy(),
+            "resources":self.project_data['resources'].copy(),
+            "enhancement":self.enhancement_matrix
         }
         
         return copy.deepcopy(state)

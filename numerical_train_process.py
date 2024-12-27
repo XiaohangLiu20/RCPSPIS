@@ -1,11 +1,3 @@
-#!/usr/bin/env python3
-# -*- coding: utf-8 -*-
-"""
-Created on Thu Dec 26 11:13:04 2024
-
-@author: liuxiaohang
-"""
-
 import numpy as np
 import torch
 import torch.nn.functional as F

@@ -204,7 +204,7 @@ class PPOAgent:
         # calculate cur_states values
         node_features = torch.stack([self.compute_node_features(state) for state in states]).to(self.device)
         global_infos = torch.stack([self.compute_global_info(state) for state in states]).to(self.device)
-        masks = torch.tensor(np.array([self.compute_action_mask(state) for state in states]))
+        masks = torch.tensor(np.array([self.compute_action_mask(state) for state in states])).to(self.device)
         
         old_values = self.get_value(node_features, global_infos).view(-1, 1)
         
